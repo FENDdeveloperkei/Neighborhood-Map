@@ -26,7 +26,7 @@ export default class App extends Component {
   // load map script
   loadMap() {
     this.loadScript = false
-    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBDJfK_ZPEMHqgURHbksiFGt46JIW6wv0Y&callback=initMap")
+    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBHc3m3XxUQIwvpgvJLji1E2-_Dob7uvGI&callback=initMap")
     window.initMap = this.initMap;
     // handels console error for multipul api request
     window.google = {}
