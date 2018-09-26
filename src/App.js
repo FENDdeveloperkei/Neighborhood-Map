@@ -39,7 +39,7 @@ export default class App extends Component {
     let bounds = new window.google.maps.LatLngBounds();
 
     const map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: 51.165691, lng: -10.451526},
+      center: {lat: 36.1622, lng: -86.7744},
       zoom: 10
 
     });
