@@ -1,174 +1,206 @@
-html, body, .root {
-  height: 100%;
-}
 body {
-  line-height: 1.5;
-}
-body, .app {
-  background: white;
-}
-
-/* main page */
-
-.list-books-title {
-  padding: 10px 0;
-  background: #2e7c31;
-  text-align: center;
-}
-.list-books-title h1 {
-  font-weight: 400;
-  margin: 0;
-  color: white;
-}
-
-.list-books-content {
-  padding: 0 0 80px;
-  flex: 1;
-}
-
-.bookshelf {
-  padding: 0 10px 20px;
-}
-
-@media (min-width: 600px) {
-  .bookshelf {
-    padding: 0 20px 40px;
-  }
-}
-
-.bookshelf-title {
-  border-bottom: 1px solid #dedede;
-}
-.bookshelf-books {
-  text-align: center;
-}
-
-.open-search {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-}
-.open-search a {
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #2e7d32;
-  background-image: url('./icons/add.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  font-size: 0;
-}
-
-/* search page */
-
-.search-books-bar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
-}
-.search-books-input-wrapper {
-  flex: 1;
-  background: #e9e;
-}
-.search-books-bar input {
-  width: 100%;
-  padding: 15px 10px;
-  font-size: 1.25em;
-  border: none;
-  outline: none;
-}
-
-.close-search {
-  display: block;
-  top: 20px;
-  left: 15px;
-  width: 50px;
-  height: 53px;
-  background: white;
-  background-image: url('./icons/arrow-back.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 28px;
-  font-size: 0;
-}
-
-.search-books-results {
-  padding: 80px 10px 20px;
-}
-
-/* books grid */
-
-.books-grid {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.books-grid li {
-  padding: 10px 15px;
-  text-align: left;
-}
-
-.book {
-  width: 140px;
-}
-.book-title,
-.book-authors {
-  font-size: 0.8em;
-}
-.book-title {
-  margin-top: 10px;
-}
-.book-authors {
-  color: #999;
-}
-
-.book-top {
-  position: relative;
-  height: 200px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.book-shelf-changer {
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #60ac5d;
-  background-image: url('./icons/arrow-drop-down.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.book-shelf-changer select {
-  width: 100%;
   height: 100%;
-  opacity: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+/* Nav.js styles */
+h2 {
+  color: #fefefe;
+  font-size: 25px;
+}
+/* search-container */
+.searchNav {
+  background-color: rgb(54, 54, 54);
+  padding: 15px;
+} 
+
+ul {
+  margin: 0;
+  padding: 20px;
+}
+
+.scroll-title {
+  padding-top: 90px;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.sub-menu{
+  border-radius: 10px;
+  position: relative;
+  background-color: #fefefe;
+  font-size: 12px;
+  max-height: 35em;
+  overflow-y: auto;
+  border: 1px solid #7c7b7b;
+  width: 10px;
+  
+  /* box shadow */
+  box-shadow
+    -webkit-box-shadow: 0px 3px 30px 3px rgb(165, 165, 165);
+    -moz-box-shadow: 0px 3px 30px 3px rgb(165, 165, 165);
+    box-shadow: 0px 3px 30px 3px rgba(186,184,186,1);
+}
+
+.sub-menu li {
+  width: 100%;
+  font-weight: bold;
+  list-style-type: none;
+  padding: 10px 0px;
+  border-bottom: .5px solid rgb(165, 165, 165);
+}
+
+li:hover {
   cursor: pointer;
+  background: #fefefe;
 }
 
-/* book cover */
+.circleMarker {
+  padding-right:20px;
+  height: 30px;
+  width: 30px;
+}
 
-.book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background: #eee;
+input {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 10px 20px;
+  border: 1px solid rgba(0,0,255,0.18);
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  font: normal 16px/normal Arial, Helvetica, sans-serif;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(255,255,255,1);
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+  
 }
-.book-cover-title {
-  padding: 20px 10px 0;
-  text-align: center;
-  font-size: 0.8em;
+
+.searchBtn {
+  margin: 20px;
+	-moz-box-shadow:inset 0px 0px 0px 0px #aed5fc;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #aed5fc;
+	box-shadow:inset 0px 0px 0px 0px #aed5fc;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff4321), color-stop(1, #22ffe1));
+	background:-moz-linear-gradient(top, #ff4321 5%, #22ffe1 100%);
+	background:-webkit-linear-gradient(top, #ff4321 5%, #22ffe1 100%);
+	background:-o-linear-gradient(top, #ff4321 5%, #22ffe1 100%);
+	background:-ms-linear-gradient(top, #ff4321 5%, #22ffe1 100%);
+	background:linear-gradient(to bottom, #ff4321 5%, #22ffe1 100%);
+	background-color: #8cfc5f;
+	-moz-border-radius:25px;
+	-webkit-border-radius:25px;
+	border-radius:15px;
+	border:1px solid #ffae64;
+	display:inline-block;
+	cursor:pointer;
+	color:#383838;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:12px 20px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #64fce8;
 }
+
+/* App.js styles */
+#map {
+  overflow:hidden;
+  bottom:0px;
+  height: 100%;
+  left: 362px;
+  position: absolute;
+  right: 0px;
+}
+
+
+/* Media Queries  */
+@media only screen and (max-width: 600px) {
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .scroll-title {
+   text-align: center;
+   padding-top: 10px;
+  }
+
+  .searchNav {
+    position: relative;
+    width: 100%;
+    padding: 10px 0px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .listBox {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    background-color: #fefefe;
+    margin-top: 380px;
+  }
+
+  .sub-menu {
+    position: relative;
+    padding: 0.7em;
+    max-height: 5em;
+    overflow-y: auto;
+    width: 80%;
+    margin: 0% auto;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .sub-menu li {
+    text-align: left;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 1em;
+    border-bottom: .5px solid rgb(165, 165, 165);
+  }
+  
+  li:hover {
+    cursor: pointer;
+    background: #fefefe;
+  }
+
+  .circleMarker {
+    padding-right:20px;
+    height: 40px;
+    width: 40px;
+  }  
+
+  .map-wrapper .listBox{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  #map {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+}
+
+@media only screen and (min-width: 600px) {
+  .sub-menu{
+    background-color: #fefefe;
+    font-size: 12px;
+    max-height: 35em;
+    overflow-y: auto;
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #dcdcdc;
+  }
+}  
