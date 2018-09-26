@@ -80,10 +80,10 @@ export default class App extends Component {
   getVenues(query = '') {
     const endPoint = 'https://api.foursquare.com/v2/venues/explore?';
     const params = {
-      client_id: 'B0PVDBLLSY3FCNRHJRP25ZOHQK1B3TZMYH24PD45GYDZMYS1',
-      client_secret: 'R5VUP51Z3GCUOES5CKAZ0ZQJQ4YYW2ANYCMY4G2JQJTCOKQM',
-      query: query,
-      near: 'Crete Greece',
+      client_id: '5MO2FLS4CZ0SBQJCONHJAZ4ERRGTACLX2KDMKGP5BDCSUMSE',
+      client_secret: 'JV4ESAR4GZDCTRJ5FGAXNRWB2K4UTMMB1E3VIZQ4U10YI4XR',
+      query: 'query',
+      near: 'Nashville Tennessee',
       v: '20180505'
     };
 
