@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './App.css';
 import Nav from './Components/Nav'
-import Marker from './images/marker.svg'
+import Marker from './images/marker.png'
 
 export default class App extends Component {
 
