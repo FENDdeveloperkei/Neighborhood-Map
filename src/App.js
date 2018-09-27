@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './App.css';
 import Nav from './Components/Nav'
-import Marker from './images/marker.png'
+import Marker from './icons/marker.png'
 
 export default class App extends Component {
 
@@ -23,13 +23,9 @@ export default class App extends Component {
   }
 
 
-  // load map script
-  loadMap() {
-    this.loadScript = false
-    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBHc3m3XxUQIwvpgvJLji1E2-_Dob7uvGI&callback=initMap")
-    window.initMap = this.initMap;
-    // handels console error for multipul api request
-    window.google = {}
+  loadMap=()=>{
+    loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyByxHn5EYEBHNx0XmfvEpl7AkuOlPpgM0w&callback=googleSuccess');
+    window.googleSuccess = this.googleSuccess;
   }
 
   // create a google map
@@ -39,7 +35,7 @@ export default class App extends Component {
     let bounds = new window.google.maps.LatLngBounds();
 
     const map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: 36.1622, lng: -86.7744},
+      center: {lat: 36.202971, lng: -86.692699},
       zoom: 10
 
     });
@@ -84,16 +80,16 @@ export default class App extends Component {
       client_secret: 'JV4ESAR4GZDCTRJ5FGAXNRWB2K4UTMMB1E3VIZQ4U10YI4XR',
       query: 'query',
       near: 'Nashville Tennessee',
-      v: '20180505'
+      v: '20180926'
     };
 
-    axios.get(endPoint + new URLSearchParams(params))
+    axios.get(endPoint + new URLSearchParams(parameters))
       .then(response => {
         const { groups } = response.data.response;
         this.setState({ venues: groups[0].items}, this.loadMap(false));
       })
-      .catch(error => {
-        console.log(error);
+      .catch(err => {
+        console.log(err);
         alert('Sorry about that it seems there was an error. The foursqaure API failed to load')
       })
   }
@@ -153,15 +149,14 @@ window.gm_authFailure = function() {
 }
 
 
-function loadScript(source) {
-  let index = window.document.getElementsByTagName('script')[0];
-  let script = window.document.createElement('script');
-  script.src = source;
-  script.async = true;
+function loadScript(url) {
+  const index = window.document.getElementsByTagName('script')[0];
+  const script = window.document.createElement('script');
   script.defer = true;
-  script.onerror = function() {
-    alert("Google Maps failed to load, sorry try again later");
-};
-  
-  index.parentNode.insertBefore(script, index);
+  script.async = true;
+  script.src = url;
+  script.onerror = window.gm_authFailure;
+  index.parentNode.insertBefore(script, index);//parent.parentNode.insertBefore(child, parent);
 }
+
+export default App;
